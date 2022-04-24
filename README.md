@@ -74,7 +74,7 @@ python CardGameWar.py
 ## Contact
 <img align="left" src="https://avatars.githubusercontent.com/vicsamuel?size=100">
 
-Made with ❤️ by [Victor Samuel](https://github.com/vicsamuel), enter in contact!
+Made with ❤️ by [Victor Samuel](https://github.com/vicsamuel)!
 
 <a href="https://www.linkedin.com/in/v1c" target="_blank"><img src="https://img.shields.io/badge/v1c-0077B5?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Badge" height="25"></a>&nbsp;
 
