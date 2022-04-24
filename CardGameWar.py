@@ -1,30 +1,4 @@
-#####################################
-### WELCOME TO YOUR OOP PROJECT #####
-#####################################
-
-# For this project you will be using OOP to create a card game. This card game will
-# be the card game "War" for two players, you an the computer. If you don't know
-# how to play "War" here are the basic rules:
-#
-# The deck is divided evenly, with each player receiving 26 cards, dealt one at a time,
-# face down. Anyone may deal first. Each player places his stack of cards face down,
-# in front of him.
-#
-# The Play:
-#
-# Each player turns up a card at the same time and the player with the higher card
-# takes both cards and puts them, face down, on the bottom of his stack.
-#
-# If the cards are the same rank, it is War. Each player turns up three cards face
-# down and one card face up. The player with the higher cards takes both piles
-# (six cards). If the turned-up cards are again the same rank, each player places
-# another card face down and turns another card face up. The player with the
-# higher card takes all 10 cards, and so on.
-#
-# There are some more variations on this but we will keep it simple for now.
-# Ignore "double" wars
-#
-# https://en.wikipedia.org/wiki/War_(card_game)
+# CardGameWar.py
 
 from random import shuffle
 
@@ -87,7 +61,6 @@ class Player:
     def play_card(self):
         drawn_card = self.hand.remove_card()
         print("{} has placed: {}".format(self.name, drawn_card))
-        print('\n')
         return drawn_card
 
     def remove_war_cards(self):
@@ -115,7 +88,7 @@ d.shuffle()
 half1, half2 = d.split_in_half()
 
 # Automatically create computer and ask user for their screen name
-comp = Player("computer", Hand(half1))
+comp = Player("Computer", Hand(half1))
 name = input("Please enter your name: ")
 user = Player(name, Hand(half2))
 
@@ -131,7 +104,6 @@ while user.still_has_cards() and comp.still_has_cards():
     print(user.name+" count: "+str(len(user.hand.cards)))
     print(comp.name+" count: "+str(len(comp.hand.cards)))
     print("Both players play a card!")
-    print('\n')
 
     # Table cards represented as list
     table_cards = []
@@ -163,19 +135,25 @@ while user.still_has_cards() and comp.still_has_cards():
         # Check to see who won based on card rank and then adds the winning cards to their hand
         if RANKS.index(c_card[1]) < RANKS.index(p_card[1]):
             print(user.name+" has the higher card, they win this war!")
+            print('\n')
             user.hand.add(table_cards)
         else:
             print(comp.name+" has the higher card, they win this war!")
+            print('\n')
             comp.hand.add(table_cards)
 
     else:
         # Check to see who won based on card rank and then adds the winning cards to their hand
         if RANKS.index(c_card[1]) < RANKS.index(p_card[1]):
             print(user.name+" has the higher card, they win this war!")
+            print('\n')
             user.hand.add(table_cards)
         else:
             print(comp.name+" has the higher card, they win this war!")
+            print('\n')
             comp.hand.add(table_cards)
 
 print("Awesome game! Total number of rounds: "+str(total_rounds))
 print("Total number of wars: "+str(war_count))
+print('\n')
+
